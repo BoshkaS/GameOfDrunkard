@@ -7,6 +7,9 @@ namespace GameOfDrunkard
         {
             Card card = new Card( Value.king, Suit.hearts);
             Console.WriteLine(card);
+            var cardSharp = new Sharper(52); 
+            cardSharp.Shuffle(); 
+
         }
     }
 }
