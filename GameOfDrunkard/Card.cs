@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameOfDrunkard
 {
-    public class Card
+    public class Card : IComparable<Card>
     {
         public Suit Suit { get; }
 
@@ -21,6 +21,11 @@ namespace GameOfDrunkard
         public override string ToString()
         {
             return $"{Value} of {Suit}";
+        }
+        public int CompareTo(Card other)
+        {
+            int valueComparison = Value.CompareTo(other.Value);
+            return valueComparison != 0 ? valueComparison : Suit.CompareTo(other.Suit);
         }
     }
 }

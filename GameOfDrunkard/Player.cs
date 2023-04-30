@@ -18,8 +18,6 @@ namespace GameOfDrunkard
             cards = new Stack<Card>();
         }
      
-
     }
-
 
 }
