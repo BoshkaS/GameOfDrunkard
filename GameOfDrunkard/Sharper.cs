@@ -15,6 +15,11 @@ namespace GameOfDrunkard
             deck = new Deck(amount); // create new deck with specified amount
         }
 
+        public Deck GetDeck()
+        {
+            return deck;
+        }
+
         public void Shuffle() // method to shuffle the deck
         {
             Random random = new Random(); // create new instance of Random class
@@ -29,10 +34,10 @@ namespace GameOfDrunkard
                 deck.Cards[n] = card; // set card at index n to the card previously at index k
             }
 
-            foreach (Card card in deck.Cards) // for each card in the deck
-            {
-                Console.WriteLine(card + " "); // output the card to the console
-            }
+            //foreach (Card card in deck.Cards) // for each card in the deck
+            //{
+            //    Console.WriteLine(card + " "); // output the card to the console
+            //}
         }
 
         public Card DrawCard() // method to draw a card from the deck
@@ -45,6 +50,20 @@ namespace GameOfDrunkard
             Card card = deck.Cards[0]; // get the first card in the deck
             deck.Cards.RemoveAt(0); // remove the card from the deck
             return card; // return the card
+        }
+        public void DealCards(List<Player> players, Sharper sharp, Deck deck)
+        {
+            int playersAmount = players.Count;
+            int numCards = (int)Math.Floor((double)deck.Amount / (double)playersAmount); // determine the number of cards the players need based on the deck
+
+            foreach (Player player in players)
+            {
+                for (int i = 0; i < numCards; i++) // deal the appropriate number of cards to the player
+                {
+                    Card card = sharp.DrawCard(); // draw a card from the deck
+                    player.cards.Push(card); // add the card to the player's 
+                }
+            }
         }
     }
 
