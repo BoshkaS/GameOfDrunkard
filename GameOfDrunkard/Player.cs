@@ -16,7 +16,8 @@ namespace GameOfDrunkard
         {
             Name = name;
             cards = new Stack<Card>();
-
         }
+     
     }
+
 }
