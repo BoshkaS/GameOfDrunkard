@@ -15,6 +15,8 @@ namespace GameOfDrunkard
         public Player(string name)
         {
             Name = name;
+            cards = new Stack<Card>();
+
         }
     }
 }
