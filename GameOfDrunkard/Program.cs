@@ -5,34 +5,16 @@ namespace GameOfDrunkard
     {
         static void Main(string[] args)
         {
+            Deck deck = new Deck(36); // create a deck with 36 cards
+            var cardSharp = new Sharper(deck);
 
-            //Card card = new Card( Value.king, Suit.hearts);
-            //Console.WriteLine(card);
-            var cardSharp = new Sharper(36);
-            cardSharp.Shuffle();
+            Player player1 = new Player("Bozhena"); // create a player
+            Player player2 = new Player("Vika"); // create a player
+            Player player3 = new Player("Rostyslav"); // create a player
+            List<Player> container = new List<Player>() { player1, player2, player3 };
 
-            Deck deck = cardSharp.GetDeck(); // create a deck with 36 cards
-
-            Player player1 = new Player("Player 1"); // create a player
-            Player player2 = new Player("Player 2"); // create a player
-            List<Player> container = new List<Player>() { player1, player2 };
-
-            foreach (Player player in container)
-            {
-                Sharper newCardSharp = new Sharper(36); // create a new instance of Sharper for each player
-                newCardSharp.Shuffle();
-                Deck newDeck = newCardSharp.GetDeck(); // create a new deck for each player
-                newCardSharp.DealCards(container, newCardSharp, newDeck); // deal cards to the players using the new instance of Sharper and the new deck
-            }
-            
-            
-            List<string> playerNames = new List<string> { "Player1", "Player2", "Player3"};
-            int deckAmount = 52;
-
-            Game game = new Game(playerNames, deckAmount);
-            game.Play();
-
-
+            Game game = new Game(container, cardSharp);
+            game.PlayingGame();
         }
     }
 }

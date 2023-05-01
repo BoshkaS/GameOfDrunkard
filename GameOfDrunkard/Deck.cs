@@ -29,9 +29,5 @@ namespace GameOfDrunkard
 
             else if (amount == 52) Cards = cards;
         }
-        public List<Card> GetCards()
-        {
-            return Cards;
-        }
     }
 }

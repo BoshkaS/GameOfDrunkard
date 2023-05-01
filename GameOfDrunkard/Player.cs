@@ -10,14 +10,25 @@ namespace GameOfDrunkard
     {
         public string Name { get; set; }
 
-        public Stack<Card> cards{get; set;}
+        public Stack<Card> Cards{get; set;}
 
         public Player(string name)
         {
             Name = name;
-            cards = new Stack<Card>();
+            Cards = new Stack<Card>();
         }
-     
+
+        public override string ToString()
+        {
+            string result = $"Name of Player is {Name} and player has ";
+            foreach(var card in Cards)
+            {
+                result += $"{card}, ";
+            }
+            result += "\n\n";
+            return result;
+        }
+
     }
 
 }

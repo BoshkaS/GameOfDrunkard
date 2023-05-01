@@ -12,10 +12,13 @@ namespace GameOfDrunkard
 
         public Value Value { get; }
 
+        public Player Player { get; set; }
+
         public Card (Value value, Suit suit)
         {
             Suit = suit;
             Value = value;
+            Player = null;
         }
 
         public override string ToString()
