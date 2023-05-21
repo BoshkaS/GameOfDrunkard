@@ -184,7 +184,7 @@ namespace GameOfDrunkard
         //}
         public void PlayingGame()
         {
-            int round = 0;
+            int round = 1;
             while (true)
             {
                 //if (round == 30) break;

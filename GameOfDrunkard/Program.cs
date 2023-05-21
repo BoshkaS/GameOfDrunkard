@@ -8,10 +8,10 @@ namespace GameOfDrunkard
             //Deck deck = new Deck(36); // create a deck with 36 cards
             //var cardSharp = new Sharper(deck);
 
-            //Player player1 = new Player("Bozhena"); // create a player
-            //Player player2 = new Player("Vika"); // create a player
-            //Player player3 = new Player("Rostyslav"); // create a player
-            //List<Player> container = new List<Player>() { player1, player2, player3 };
+            Player player1 = new Player("Bozhena"); // create a player
+            Player player2 = new Player("Vika"); // create a player
+            Player player3 = new Player("Rostyslav"); // create a player
+            List<Player> container = new List<Player>() { player1, player2, player3 };
             Console.Write("Input number of players:");
             int numOfPlayers = int.Parse(Console.ReadLine()); 
 
